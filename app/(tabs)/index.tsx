@@ -1,16 +1,21 @@
-import { Link } from "expo-router";
-import {StyleSheet, Text, View } from "react-native";
-import { Image } from "expo-image";
 
-const PlaceholderImage = require("../../assets/images/home.avif")
+import {StyleSheet, Text, View } from "react-native";
+
+import ImageViewer from "@/components/ImageViewer";
+import Button from "@/components/Button";
+
+const PlaceholderImage = require("/home/cristina/Development/code/learning-languages/learning-expo-react-native/assets/images/home .avif")
 export default function Index() {
   return (
     <View style={styles.container}>
       <View style={styles.imagecontainer}>
-      <Image source={PlaceholderImage}style={styles.image} />
+      <ImageViewer imgSource={PlaceholderImage} />
+      {/* <ImageViewer imgSource={PlaceholderImage} /> */}
       </View>
-      <Text>Hello world!</Text>
-      {/* <Link href={"/about"} style={styles.button}> Go to about screen </Link> */}
+      <View style={styles.footerContainer}>
+      <Button  label="choose a photo" theme= "primary"/>
+      <Button label="use this photo" /> 
+</View>
     </View>
   );
 }
@@ -19,25 +24,19 @@ export default function Index() {
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    // backgroundColor:'#fff',
+    backgroundColor:'#fff',
     alignItems:'center',
     justifyContent:'center',
   
   },
-  // button:{
-  //   fontSize:20,
-  //   textDecorationLine:"underline",
-  //   color:"black",
-
-  // },
-  image: {
-    width: 320,
-    height: 440,
-    borderRadius: 18,
-  },
+  
   imagecontainer:{
     flex: 1,
-  }
+  },
+  footerContainer:{
+    flex:0.33,
+    alignItems:'center',
+  },
   
 });
 
