@@ -1,12 +1,15 @@
-import { Link } from "expo-router";
+import { Link, Stack } from "expo-router";
 import {StyleSheet, Text, View } from "react-native";
 
-export default function Index() {
+export default function NotFoundScreen() {
   return (
+    <>
+    <Stack.Screen options={{title:"Oops! Not Found"}} />
     <View style={styles.container}>
-      <Text>Hello world!</Text>
-      <Link href={"/about"} style={styles.button}> Go to about screen </Link>
+     
+      <Link href= "/" style={styles.button}> Go to back to home screen</Link>
     </View>
+    </>
   );
 }
 // remote style that can be used wide 
@@ -14,7 +17,7 @@ export default function Index() {
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:'#fff',
+    backgroundColor:'#25292e',
     alignItems:'center',
     justifyContent:'center',
   
